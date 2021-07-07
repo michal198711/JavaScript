@@ -27,13 +27,13 @@ projects.forEach(({ name}, i) => {
 	const listItem = document.createElement('li');
 
 	listItem.innerHTML = `
-		<a href="https://github.com/michal198711/JavaScript/${name}/index.html">
+		<a href="https://michal198711.github.io/JavaScript/${name}/index.html">
 			<img src="/${name}/screen.jpg" alt="${name}" />
 			<p>${i + 1}. ${formatProjectName(name)}</p>
 		</a>
 
 		<div class="links-container">
-			<a href="https://github.com/michal198711/JavaScript/${name}/index.html" class="blue">
+			<a href="https://michal198711.github.io/JavaScript/${name}/index.html" class="blue">
 				
 			</a>\
 		</div>
