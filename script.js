@@ -33,7 +33,7 @@ projects.forEach(({ name}, i) => {
 		</a>
 
 		<div class="links-container">
-			<a href="/${name}/index.html" class="blue">
+			<a href="JavaScript/${name}/index.html" class="blue">
 				
 			</a>\
 		</div>
