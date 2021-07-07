@@ -4,7 +4,7 @@
 }
 
 body{
-    background-image: url(2020.08.14._Widok_0003-1170x433.jpg);
+    background-image: url(IMG_0388.JPG);
     background-size: cover;
     background-position: center center;
     display: flex;
@@ -14,19 +14,20 @@ body{
     min-height: 100vh;
     font-family: Poppins, sans-serif;
     margin: 0;
-    color:aliceblue;
+    color:rgb(196, 19, 19);
 }
 
 h1{
     font-weight: normal;
     font-size: 4rem;
-    margin-top: 5rem;
+    margin-top: 15rem;
 }
 .countdown-container{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    margin-top: 25rem;
 }
 .big-text {
     font-weight: bold;

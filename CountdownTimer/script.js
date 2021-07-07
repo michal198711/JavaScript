@@ -5,15 +5,16 @@ const secondsEl = document.getElementById("seconds");
 
 
 
-const lastVisit = "16 mar 2021 16:00";
+
 function countdown() {
-    const lastVisitDate = new Date(lastVisit);
-    const currentDate = new Date();
-    const totalSeconds = ( currentDate - lastVisitDate ) / 1000;
-    const days = Math.floor(totalSeconds /3600/24);
-    const hours =   Math.floor(totalSeconds /3600) % 24;
-    const minutes = Math.floor(totalSeconds /60) %24;
-    const seconds = Math.floor(totalSeconds) % 60;
+    const countDownDate = new Date("Jan 1, 2021 00:00:00").getTime();
+    const now = new Date().getTime();
+    
+    const distance  =now - countDownDate ;
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)+1);
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     daysEl.innerHTML=formatTime(days);
     hoursEl.innerHTML=formatTime(hours);
