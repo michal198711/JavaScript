@@ -33,8 +33,8 @@ projects.forEach(({ name}, i) => {
 		</a>
 
 		<div class="links-container">
-			<a href="https://michal198711.github.io/JavaScript/${name}/index.html" class="blue">
-				
+			<a href="htt
+			
 			</a>\
 		</div>
 	`;
