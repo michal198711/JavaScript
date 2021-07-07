@@ -28,7 +28,7 @@ projects.forEach(({ name}, i) => {
 
 	listItem.innerHTML = `
 		<a href="https://michal198711.github.io/JavaScript/${name}/index.html">
-			<img src="/${name}/screen.jpg" alt="${name}" />
+			<img src="https://michal198711.github.io/JavaScript/${name}/screen.jpg" alt="${name}" />
 			<p>${i + 1}. ${formatProjectName(name)}</p>
 		</a>
 
