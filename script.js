@@ -18,6 +18,10 @@ const projects = [
 		name: 'ToDo',
 
 	},
+	{
+		name: 'BlackJack',
+
+	},
 
 ];
 
