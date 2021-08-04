@@ -26,7 +26,7 @@ const projects = [
 		name: 'solresol'
 	},
 	{
-		name: 'zegar
+		name: 'zegar'
 	}
 
 ];
