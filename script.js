@@ -22,6 +22,9 @@ const projects = [
 		name: 'BlackJack',
 
 	},
+	{
+		name: 'solresol'
+	}
 
 ];
 
