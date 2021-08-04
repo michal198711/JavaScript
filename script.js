@@ -24,6 +24,9 @@ const projects = [
 	},
 	{
 		name: 'solresol'
+	},
+	{
+		name: 'zegar
 	}
 
 ];
