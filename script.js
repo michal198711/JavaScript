@@ -27,7 +27,7 @@ const projects = [
 	},
 	{
 		name: 'zegar'
-	}
+	},
 
 ];
 
