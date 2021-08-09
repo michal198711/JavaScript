@@ -28,6 +28,10 @@ const projects = [
 	{
 		name: 'zegar'
 	},
+		{
+		name: 'blur'
+	},
+
 
 ];
 
