@@ -31,6 +31,9 @@ const projects = [
 		{
 		name: 'blur'
 	},
+	{
+		name: 'slider'
+	},
 
 
 ];
