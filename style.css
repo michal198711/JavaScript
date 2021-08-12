@@ -5,7 +5,9 @@
 }
 
 body {
-	background: #fefefe;
+background: -webkit-linear-gradient(to bottom, #292E49, #536976); 
+background: linear-gradient(to bottom, #292E49, #536976);
+
 	font-family: 'Poppins', sans-serif;
 	margin-bottom: 50px;
 }
