@@ -7,7 +7,7 @@ const secondsEl = document.getElementById("seconds");
 
 
 function countdown() {
-    const countDownDate = new Date("Aug 27, 2021 13:00:00").getTime();
+    const countDownDate = new Date("Aug 27, 2021 18:00:00").getTime();
     const now = new Date().getTime();
     
     const distance  =countDownDate- now  ;
