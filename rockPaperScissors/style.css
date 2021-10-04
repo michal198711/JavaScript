@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Koh+Santepheap&family=Roboto+Mono:wght@500&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(https://www.hollywoodreporter.com/wp-content/uploads/2012/03/big_bang_theory_leonard_nimoy_a_l.jpg?w=681&h=383&crop=1);
+  font-family: "Koh Santepheap", cursive;
+  font-family: "Roboto Mono", monospace;
+}
+
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.wrapper-text {
+    text-shadow: -2px -2px 30px rgba(150, 150, 150, 1);
+  background-color: #485461;
+  border-radius: 20px;
+  background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  flex-direction: column;
+}
+.wrapper-buttons {
+  padding: 2rem;
+}
+.win
+{color:green
+}
+.lose {
+    color: red
+}
+.draw{color:yellow;}
+    
+
