@@ -34,6 +34,9 @@ const projects = [
 	{
 		name: 'slider'
 	},
+	{
+		name: 'rockPaperScissors'
+	},
 
 
 ];
