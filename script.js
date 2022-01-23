@@ -32,12 +32,11 @@ const projects = [
 		name: 'blur'
 	},
 	{
-		name: 'slider'
+		name: 'randomUser'
 	},
 	{
-		name: 'rockPaperScissors'
+		name: 'textStatistics'
 	},
-
 
 ];
 
