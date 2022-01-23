@@ -1,0 +1,12 @@
+body  {
+background-color: rgb(92, 108, 245);
+font-family: Arial, Helvetica, sans-serif;
+}
+textarea{
+    width: 90%;
+    height: 50px;
+    background-color: antiquewhite;
+    margin: 5px;
+    justify-content: center;
+    border: 0;
+}
