@@ -38,11 +38,11 @@ function updateWeatherData(data) {
     document.getElementById("locationLink").innerHTML= city;
     document.getElementById("locationLink").href = `https://openstreetmap.org/#map=18/${lat}/${long}`;
     document.getElementById("currentWeatherImg").setAttribute("src", imgUrl);
-    document.getElementById("temp").innerHTML = temp;
-    document.getElementById("pressure").innerHTML = pressure;
-    document.getElementById("humidity").innerHTML = humidity;
-    document.getElementById("windSpeed").innerHTML = windSpeed;
-    document.getElementById("cloudsPerc").innerHTML = cloudsPercentage;
+    document.getElementById("temp").innerHTML = temp.toPrecision(2) + '&#176';
+    document.getElementById("pressure").innerHTML = pressure + ' hPa';
+    document.getElementById("humidity").innerHTML = humidity + '&#x25';
+    document.getElementById("windSpeed").innerHTML = windSpeed+ 'km/h';
+    document.getElementById("cloudsPerc").innerHTML = cloudsPercentage + '&#x25';
     document.getElementById("sunRise").innerHTML = sunRise.getHours()+ ":" + formatTime(sunRise.getMinutes()) + ":"+ formatTime(sunRise.getSeconds());
     document.getElementById("sunSet").innerHTML = sunSet.getHours()+":"+formatTime(sunSet.getMinutes())+":"+ formatTime(sunSet.getSeconds());
 
