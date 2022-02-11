@@ -40,6 +40,9 @@ const projects = [
 	{
 		name: 'appGeoWeather'
 	},
+	{
+		name: 'calculator'
+	},
 	
 
 ];
