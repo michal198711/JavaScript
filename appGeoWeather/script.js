@@ -16,7 +16,6 @@ function startApp() {
 }
 function  getWeatherData() {
 let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=${apiKey}`;
-console.log(url)
 fetch(url).then( function(response){
     response.json().then(function(data){
         console.log(data);
@@ -31,7 +30,7 @@ function updateWeatherData(data) {
     const temp =data.main.temp;
     const pressure = data.main.pressure;
     const humidity = data.main.humidity;
-    const windSpeed = data.wind.speed;
+    const windSpeed = data.wind.speed *3.6;
     const cloudsPercentage = data.clouds.all;
     const sunRise = new Date(data.sys.sunrise*1000);
     const sunSet = new Date(data.sys.sunset*1000);
@@ -41,7 +40,7 @@ function updateWeatherData(data) {
     document.getElementById("temp").innerHTML = temp.toPrecision(2) + '&#176';
     document.getElementById("pressure").innerHTML = pressure + ' hPa';
     document.getElementById("humidity").innerHTML = humidity + '&#x25';
-    document.getElementById("windSpeed").innerHTML = (windSpeed*3.6).tofixed(2)+ 'km/h';
+    document.getElementById("windSpeed").innerHTML = windSpeed.tofixed(2)+ 'km/h';
     document.getElementById("cloudsPerc").innerHTML = cloudsPercentage + '&#x25';
     document.getElementById("sunRise").innerHTML = sunRise.getHours()+ ":" + formatTime(sunRise.getMinutes()) + ":"+ formatTime(sunRise.getSeconds());
     document.getElementById("sunSet").innerHTML = sunSet.getHours()+":"+formatTime(sunSet.getMinutes())+":"+ formatTime(sunSet.getSeconds());
