@@ -10,8 +10,9 @@ function countdown() {
     const countDownDate = new Date("Dec, 2021 23:59:59").getTime();
     const now = new Date().getTime();
     
-    const distance  = now - countDownDate;
+    const distanceCount  = now - countDownDate;
     console.log(distance)
+    const distance = new Date().distanceCount
  //  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const days = distance.getDay()
  // const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)+1);
