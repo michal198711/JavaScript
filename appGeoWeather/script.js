@@ -41,7 +41,7 @@ function updateWeatherData(data) {
     document.getElementById("temp").innerHTML = temp.toPrecision(2) + '&#176';
     document.getElementById("pressure").innerHTML = pressure + ' hPa';
     document.getElementById("humidity").innerHTML = humidity + '&#x25';
-    document.getElementById("windSpeed").innerHTML = windSpeed+ 'km/h';
+    document.getElementById("windSpeed").innerHTML = windSpeed *3.6+ 'km/h';
     document.getElementById("cloudsPerc").innerHTML = cloudsPercentage + '&#x25';
     document.getElementById("sunRise").innerHTML = sunRise.getHours()+ ":" + formatTime(sunRise.getMinutes()) + ":"+ formatTime(sunRise.getSeconds());
     document.getElementById("sunSet").innerHTML = sunSet.getHours()+":"+formatTime(sunSet.getMinutes())+":"+ formatTime(sunSet.getSeconds());
