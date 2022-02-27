@@ -11,7 +11,7 @@ function countdown() {
     const now = new Date().getTime();
     
     const distanceCount  = now - countDownDate;
-    
+    console.log(distanceCount);
     const distance = new Date().distanceCount
     console.log(distance)
  //  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
