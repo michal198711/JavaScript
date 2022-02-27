@@ -11,8 +11,9 @@ function countdown() {
     const now = new Date().getTime();
     
     const distanceCount  = now - countDownDate;
-    console.log(distance)
+    
     const distance = new Date().distanceCount
+    console.log(distance)
  //  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const days = distance.getDay()
  // const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)+1);
