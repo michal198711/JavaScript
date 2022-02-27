@@ -25,7 +25,7 @@ fetch(url).then( function(response){
 }
 
 function updateWeatherData(data) {
-    const imgUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+    const imgUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
     const city = data.name;
     const temp =data.main.temp;
     const pressure = data.main.pressure;
