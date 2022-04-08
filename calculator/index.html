@@ -10,7 +10,7 @@
 <body>
 <div class="container">
     <form class="calculator" name="calc" >
-        <input type="text" name="textScreen" id="" class="value" readonly>
+        <input type="text" name="textScreen" id="" class="value" value = "0" readonly>
         <span class="num clean" onclick="calc.textScreen.value =calc.textScreen.value.slice( calc.textScreen.value.length-1,0)"><i>C</i></span>
         <span class="num clean" onclick="document.calc.textScreen.value =calc.textScreen.value.slice(0,-1)"><i>CE</i></span>
         <span class="num" onclick="calc.textScreen.value +='/'"><i>/</i></span>
