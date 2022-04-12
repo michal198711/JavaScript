@@ -43,6 +43,9 @@ const projects = [
 	{
 		name: 'calculator'
 	},
+	{
+		name: 'checkbox'
+	},
 	
 
 ];
