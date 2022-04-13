@@ -24,7 +24,7 @@ class CheckboxAgeConfirmation extends React.Component {
     <h1> Kup bilet</h1>
     <input type="checkbox" id="ageConfirmation" onChange = {this.handleChackboxChange} checked = {this.state.isChecked}/>
     <label htmlFor="ageConfirmation">Mam wiecej niz 18 lat</label>
-    {displayMessage()}
+    {this.displayMessage()}
       </>  )
 
         }
