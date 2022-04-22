@@ -1,32 +1,83 @@
-const PositiveMess = () => <p>Zapraszamy</p>
-const NegativeMess = () => <p>Nie zapraszamy</p>
-class CheckboxAgeConfirmation extends React.Component {
+// const PositiveMess = () => <p>Zaznaczone</p>
+// const NegativeMess = () => <p>Nie zaznaczone</p>
+const ValidationMessages = (props) =>  {
+    const {txt} = props
+    return (
+    <p>
+        {txt}
+    </p>
+    )
+
+}
+
+// const displayMessage = (isChecked, isFormSubmitted) => { 
+//     if(isFormSubmitted){
+//     if (isChecked) {
+//         return <ValidationMessages txt = "Wiek potwierdzony" />
+//     } else {
+//         return <ValidationMessages txt= "odmowa dostepu" />
+//     }
+// }
+// else {
+//     return null
+// }
+// }
+const OrderForm= (props) => {
+      const {change, checked, submit} = props
+    return (
+<form onSubmit={submit}>
+<input type="checkbox" id="ageConfirmation" onChange = {change} checked = {checked}/>
+<label htmlFor="ageConfirmation">Mam wiecej niz 18 lat</label>
+<br/>
+<button type= "submit" className="btn btn-default">Kup Bilet</button>
+</form>
+)}
+class TicketShop extends React.Component {
     state = {
         isChecked: false,
+        isFormSubmitted: false,
     }
     handleChackboxChange = () => {
         this.setState({
-            isChecked: !this.state.isChecked
+            isChecked: !this.state.isChecked,
+            isFormSubmitted: false,
         })
     }
-
-    displayMessage = () => {
-        if (this.state.isChecked) {
-            return <PositiveMess />
-        } else {
-            return <NegativeMess />
-        }
+    hendleFormSubmitted = (e) => {
+        e.preventDefault()
+        if(!this.state.isFormSubmitted) {
+        this.setState({
+            isFormSubmitted: true
+        })
     }
+    }
+displayMessage = () => {
+if(this.state.isFormSubmitted){
+         if (this.state.isChecked) {
+             return <ValidationMessages txt = "Wiek potwierdzony" />
+        } else {
+            return <ValidationMessages txt= "odmowa dostepu" />
+         }
+     }
+    else {
+         return null
+     }
+ }
     render() {
-        console.log(this.state.isChecked)
+        const {isChecked} = this.state
+       console.log(isChecked)
         return(
             <>
     <h1> Kup bilet</h1>
-    <input type="checkbox" id="ageConfirmation" onChange = {this.handleChackboxChange} checked = {this.state.isChecked}/>
-    <label htmlFor="ageConfirmation">Mam wiecej niz 18 lat</label>
-    {this.displayMessage()}
+    <OrderForm
+        change = {this.handleChackboxChange}
+        submit = {this.hendleFormSubmitted}
+        checked = {isChecked}
+        />
+    {this.displayMessage()
+    /* // {displayMessage(isChecked, isFormSubmitted)} */}
       </>  )
-
+ 
         }
 }
-ReactDOM.render(<CheckboxAgeConfirmation />, document.getElementById('app'));
+ReactDOM.render(<TicketShop />, document.getElementById('app'));
