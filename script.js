@@ -46,6 +46,12 @@ const projects = [
 	{
 		name: 'checkbox'
 	},
+	{
+		name: 'basket'
+	},
+	{
+		name: 'arrayTrenning'
+	},
 	
 
 ];
