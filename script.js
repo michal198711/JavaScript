@@ -48,10 +48,21 @@ const projects = [
 	},
 	{
 		name: 'basket'
-	},
+	}
 	{
 		name: 'arrayTrenning'
 	},
+	{
+		name: 'restaurant'
+	},
+	{
+		name: 'exChange'
+	},
+		{
+		name: 'divination'
+	},
+		
+		
 	
 
 ];
