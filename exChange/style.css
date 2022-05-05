@@ -1,0 +1,23 @@
+html {
+    margin: 10px;
+    font-size: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+li {
+line-height: 160%;
+padding: 20px 10px;
+cursor: pointer;
+}
+
+li:nth-child(even) {
+    background: #bbf3fd;
+}
+li:nth-child(odd) {
+    background: #00e1ff;
+}
+.active{
+font-weight: bold;
+}
+.inactive {
+    color: #888888
+}
