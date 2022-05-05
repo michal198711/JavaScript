@@ -6,7 +6,8 @@ const projects = [
 	{
 		name: 'quiz',
 
-	}, {
+	}, 
+	{
 		name: 'recipe',
 
 	},
@@ -28,7 +29,7 @@ const projects = [
 	{
 		name: 'zegar'
 	},
-		{
+	{
 		name: 'blur'
 	},
 	{
@@ -48,7 +49,7 @@ const projects = [
 	},
 	{
 		name: 'basket'
-	}
+	},
 	{
 		name: 'arrayTrenning'
 	},
