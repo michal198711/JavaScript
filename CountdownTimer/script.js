@@ -3,37 +3,30 @@ const hoursEl = document.getElementById("hours");
 const minsEl = document.getElementById("mins");
 const secondsEl = document.getElementById("seconds");
 
-
-
+const countDownDate = "1 Jan 2021";
 
 function countdown() {
-    const countDownDate = new Date("Dec, 2022 23:59:59").getTime();
-    const now = new Date().getTime();
-    
-    const distanceCount  = now - countDownDate;
-    console.log(distanceCount);
-    const distance = new Date().distanceCount
-    console.log(distance)
- //  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const days = distance.getDay()
- // const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)+1);
-    const hours = distance.getHours()
- //  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const minutes = distance.minutes()
- // const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    const seconds = distance.seconds()
-    daysEl.innerHTML=formatTime(days);
-    hoursEl.innerHTML=formatTime(hours);
-    minsEl.innerHTML=formatTime(minutes);
-    secondsEl.innerHTML=formatTime(seconds);
+    const newCountDownDate = new Date(countDownDate);
+    const currentDate = new Date();
 
+    const totalSeconds = (newCountDownDate - currentDate) / 1000;
 
-    
-};
+    const days = Math.floor(totalSeconds / 3600 / 24);
+    const hours = Math.floor(totalSeconds / 3600) % 24;
+    const mins = Math.floor(totalSeconds / 60) % 60;
+    const seconds = Math.floor(totalSeconds) % 60;
 
-function formatTime(time)
-{
-return time <10 ? `0${time}` : time;
+    daysEl.innerHTML = days;
+    hoursEl.innerHTML = formatTime(hours);
+    minsEl.innerHTML = formatTime(mins);
+    secondsEl.innerHTML = formatTime(seconds);
 }
+
+function formatTime(time) {
+    return time < 10 ? `0${time}` : time;
+}
+
+// initial call
 countdown();
-setInterval(countdown, 1000)
+
+setInterval(countdown, 1000);
