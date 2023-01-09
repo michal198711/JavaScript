@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -14,7 +10,8 @@
     </head>
     <body>
         <img class = "center" src="https://galeriakatowicka.eu/wp-content/uploads/2021/05/stokrotka_logo.png" alt="alternatetext">
-        <input class = "center" type="text" id = "numberDaisy"  maxlength="4" onchange=myFunction(this.value)>
+        <input class = "center" type="number" id = "numberDaisy"  maxlength="4" onchange=myFunction(this.value)>
+      <!--<footer><small>Numery stokrotek mniejsze niż 100 prosze wpisywać z wiadącym zerem lub dwoma.</small></footer>-->
         <script>
             function myFunction(val) {
   alert("Prawdopodobny numer to: " + phoneNumber(val));
