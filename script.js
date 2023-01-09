@@ -20,6 +20,10 @@ const projects = [
 
 	},
 	{
+		name: 'CountdownTimer',
+
+	},
+	{
 		name: 'BlackJack',
 
 	},
