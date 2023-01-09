@@ -20,7 +20,7 @@ const projects = [
 
 	},
 	{
-		name: 'CountdownTimer',
+		name: 'stokrotka',
 
 	},
 	{
