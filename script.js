@@ -29,6 +29,10 @@ const projects = [
 
 	},
 		{
+		name: 'rockPaperScissors',
+
+	},
+		{
 		name: 'CountdownTimer',
 
 	},
