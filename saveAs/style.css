@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #047abf73;
+}
+.wrapper{
+    width: 450px;
+    border-radius: 7px;
+    background: #ffffff;
+    padding: 30px 25px 40px;
+    margin-top: 50px;
+}
+.wrapper :where(textarea, input, select, button){
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 5px
+
+}
+.wrapper textarea {
+    height: 270px;
+    resize: none;
+    padding: 8px 13px;
+    border: 1px solid #ccc;
+}
+.wrapper .file-properties{
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: space-between;
+    }
+.file-properties .properties{
+width: calc(100% / 2 - 8px);
+}    
+.properties :where(input, .select-menu){
+    height:  50px;
+    padding: 0 15px;
+    margin-top: 6px;
+    border-radius: 5px;
+    border: 1px solid  #bfbfbf;
+}
+.properties .select-menu select {
+    height: 50px;
+    background: none;
+}
+.wrapper .save-btn {
+    color: #fff;
+    margin-top: 20px;
+    padding: 16px 0;
+    cursor: pointer;
+    background:  #047abf73;
+
+}

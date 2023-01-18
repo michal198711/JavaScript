@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>saveAs</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+
+    <div class="wrapper">
+        <textarea id="textarea" placeholder="Prosze wpisać tekst"></textarea>
+    <div class="file-properties">
+        <div class="properties file-mame">
+            <label>Nazwa pliku</label>
+            <input id = "file-name" type="text" placeholder="Wpisz nazwe pliku">
+        </div>
+        <div class="properties file-extension">
+            <label>Zapisz jako</label>
+            <div class="select-menu" >
+                <select id="select-menu">
+                    <option value="text/plain">Dokument tekstowy (.txt)</option>
+                    <option value="text/javascript">JavaScript (.js)</option>
+                    <option value="text/html">HTML(.html)</option>
+                    <option value="image/svg+xml">Scalable Vector Graphics (.svg)</option>
+                    <option value="application/msword">Dokument Word (.doc)</option>
+                    <option value="application/vnd.ms-powerpoint">Prezentacja Power Point (.ppt)</option>
+                    <option value="text/xml">XML(.xml)</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <button class="save-btn" id="save-btn">Zapisz plik</button>
+    </div>
+
+    </body>
+</html>
