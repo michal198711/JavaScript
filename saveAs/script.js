@@ -5,7 +5,7 @@ const saveBtn =document.getElementById("save-btn")
 
 saveBtn.addEventListener("click", () => {
 
-    const blob = new Blob([textarea.value + ], {type: selectMenu.value});
+    const blob = new Blob([textarea.value], {type: selectMenu.value});
     const fileUrl = URL.createObjectURL(blob)
     const link  = document.createElement("a");
     link.download= fileNameInput.value;
