@@ -1,8 +1,16 @@
 const projects = [
 	{
-		name: 'CountdownTimer',
+		name: 'saveAs',
 
 	},
+		{
+		name: 'weather',
+
+	},
+		{
+		name: 'appGeoWeather'
+	},
+
 	{
 		name: 'quiz',
 
@@ -11,16 +19,17 @@ const projects = [
 		name: 'recipe',
 
 	},
-	{
-		name: 'weather',
 
-	},
 	{
 		name: 'ToDo',
 
 	},
 	{
 		name: 'stokrotka',
+
+	},
+		{
+		name: 'CountdownTimer',
 
 	},
 	{
@@ -42,9 +51,7 @@ const projects = [
 	{
 		name: 'textStatistics'
 	},
-	{
-		name: 'appGeoWeather'
-	},
+
 	{
 		name: 'calculator'
 	},
