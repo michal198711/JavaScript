@@ -35,6 +35,7 @@ if(randomNumber === 5){
 }
 
 function getresult(){
+    clearResoult()
     if(computerChoice === userChoice){
      result = `<span class= 'draw'> It's a draw.</span>`
     }
@@ -79,3 +80,5 @@ function getresult(){
        }
     resultDisplay.innerHTML = result
 }
+function clearResoult() {
+resultDisplay.innerHTML="<span></span>"}
