@@ -3,6 +3,11 @@ const projects = [
 		name: 'saveAs',
 
 	},
+	{
+		name: 'daisyV2',
+
+	},
+	
 		{
 		name: 'weather',
 
