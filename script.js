@@ -4,6 +4,10 @@ const projects = [
 
 	},
 	{
+		name:"scan_and_print"
+	},
+	
+	{
 		name: 'daisyV2',
 
 	},
