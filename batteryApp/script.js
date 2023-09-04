@@ -7,8 +7,8 @@ function initBattery() {
     navigator.getBattery().then((batt) => {
         updateBattery = ()=> {
             let level = Math.floor(batt.level * 100);
-            let batteryPercentage.innerHTML = level + "%";
-            let batteryLiquid.style.height = `${parseInt(batt.level * 100)}%`;
+            batteryPercentage.innerHTML = level + "%";
+            batteryLiquid.style.height = `${parseInt(batt.level * 100)}%`;
             if (level == 100){
                 batteryStatus.innerHTML = `Pełna <i class="ri-battery-2-fill green-color"></i>`;
                 batteryLiquid.style.height = "103%";
