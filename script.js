@@ -1,4 +1,8 @@
 const projects = [
+		{
+		name: 'batteryApp',
+
+	},
 	{
 		name: 'saveAs',
 
