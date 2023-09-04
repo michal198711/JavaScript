@@ -41,6 +41,6 @@ function initBattery() {
       //  }
         updateBattery();
         batt.addEventListener("chargingchange", () => { updateBattery() });
-        batt.addEventListener("levelchange", () => { updateBattery });
+        batt.addEventListener("levelchange", () => { updateBattery() });
     })
 }
