@@ -2,7 +2,7 @@ initBattery();
 
 function initBattery() {
     const batteryLiquid = document.querySelector(".bLiquid");
-    const batteryStatus = document.querySelector(".bPercentage");
+    const batteryStatus = document.querySelector(".bStatus");
     const batteryPercentage = document.querySelector(".bPercentage");
     navigator.getBattery().then((batt) => {
         updateBattery = ()=> {
