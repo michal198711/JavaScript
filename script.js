@@ -5,7 +5,7 @@ const projects = [
 	},
 		},
 		{
-		name: 'zabbix_api'
+		name: 'zabbix_api',
 	},
 	{
 		name: 'saveAs',
