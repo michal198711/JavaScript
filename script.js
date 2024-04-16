@@ -3,7 +3,6 @@ const projects = [
 		name: 'batteryApp',
 
 	},
-		},
 		{
 		name: 'zabbix_api',
 	},
