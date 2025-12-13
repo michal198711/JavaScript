@@ -214,35 +214,10 @@
                 font-size: 1.3rem;
             }
         }
-        
-
-        /* PRZYCISKI TESTOWE (Do usunięcia) */
-        .debug-controls {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            background: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            border: 2px solid #333;
-            z-index: 9999;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            font-size: 14px;
-        }
-        .debug-controls button {
-            display: block;
-            width: 100%;
-            cursor: pointer; padding: 8px; margin: 5px 0;
-            border: 1px solid #ccc; background: #eee;
-            border-radius: 4px;
-        }
-        .debug-controls button:hover { background: #ddd; }
-        .remove-hint { color: red; font-size: 12px; margin-bottom: 5px; display: block;}
     </style>
 </head>
 <body>
 
-   
     <div class="container">
         <h1>Klaudia & Krzysztof</h1>
         
@@ -275,8 +250,8 @@
     <script>
         // === KONFIGURACJA ===
         
-        // 1. DATA ŚLUBU (27 Maja 2026, 17:00:00) - Zmienione zgodnie z prośbą!
-        const weddingDate = new Date('2026-05-27T17:00:00').getTime();
+        // 1. DATA ŚLUBU (27 Czerwca 2026, 17:00:00) - Ustawione na 27.06.2026!
+        const weddingDate = new Date('2026-06-27T17:00:00').getTime();
 
         // 2. OBRAZKI (Wklej tutaj nazwy swoich plików .jpg/.gif, lub linki)
         // Domyślne linki zastępcze (Placeholders)
@@ -298,12 +273,10 @@
             txt: document.getElementById('statusText')
         };
 
-        let manualOverride = false;
+        // Flagi testowe usunięte. Zegar działa automatycznie.
         let currentPhase = '';
 
         function updateTimer() {
-            if (manualOverride) return;
-
             const now = new Date().getTime();
             const distance = weddingDate - now;
 
@@ -344,17 +317,15 @@
         }
 
         function applyPhase(phase) {
-            if (currentPhase === phase && !manualOverride) return;
+            if (currentPhase === phase) return;
             currentPhase = phase;
 
             els.body.className = '';
             els.body.classList.add(`phase-${phase}`);
             
             // Ustawienie obrazka
-            if (!manualOverride || els.img.src.includes('placehold')) {
-               els.img.src = images[phase];
-            }
-
+            els.img.src = images[phase];
+            
             // Ustawienie sarkastycznych tekstów bez zwracania się i bez imion:
             if (phase === 'relax') {
                 els.txt.innerText = "'To tylko papier'. Wciąż się wierzy w tę bajkę. Na tym etapie iluzja beztroski jest jeszcze silna. Należy korzystać! 😎";
@@ -366,21 +337,9 @@
             }
         }
 
-        // --- FUNKCJE DLA PANELU TESTOWEGO ---
-        function setPhase(phase) {
-            manualOverride = true;
-            applyPhase(phase);
-        }
-        function resetAuto() {
-            manualOverride = false;
-            currentPhase = '';
-            updateTimer();
-        }
-
         // Start
         const interval = setInterval(updateTimer, 1000);
         updateTimer();
     </script>
 </body>
 </html>
-
