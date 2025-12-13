@@ -250,8 +250,10 @@
     <script>
         // === KONFIGURACJA ===
         
-        // 1. DATA ŚLUBU (27 Czerwca 2026, 17:00:00) - Ustawione na 27.06.2026!
-        const weddingDate = new Date('2026-06-27T17:00:00').getTime();
+        // 1. DATA ŚLUBU (27 Czerwca 2026, 17:00:00) 
+        // Użycie +02:00 jawnie ustawia strefę czasową na CEST (czas letni w Polsce), 
+        // zapewniając poprawność odliczania niezależnie od lokalizacji urządzenia.
+        const weddingDate = new Date('2026-06-27T17:00:00+02:00').getTime();
 
         // 2. OBRAZKI (Wklej tutaj nazwy swoich plików .jpg/.gif, lub linki)
         // Domyślne linki zastępcze (Placeholders)
@@ -273,7 +275,6 @@
             txt: document.getElementById('statusText')
         };
 
-        // Flagi testowe usunięte. Zegar działa automatycznie.
         let currentPhase = '';
 
         function updateTimer() {
