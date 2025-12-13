@@ -97,7 +97,7 @@
             font-weight: 600;
         }
 
-        /* --- MOTYWY GRAFICZNE DLA HUMORU --- */
+        /* --- MOTYWY GRAFICZNE DLA HUMORU (BEZ ZMIAN) --- */
 
         /* FAZA 1: > 90 dni (Luzik) */
         body.phase-relax {
@@ -172,6 +172,50 @@
         }
 
 
+        /* ==================================== */
+        /* === MEDIA QUERIES (OPTYMALIZACJA MOBILNA) === */
+        /* ==================================== */
+
+        @media (max-width: 500px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 1.5rem 1rem;
+                border-radius: 12px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .status-message {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+            .image-wrapper {
+                height: 250px; /* Zmniejszamy wysokość obrazka */
+                margin-bottom: 15px;
+            }
+            .countdown {
+                gap: 10px;
+            }
+            .time-box {
+                padding: 10px 8px; /* Mniejszy padding w boxach */
+                min-width: 70px;
+            }
+            .number {
+                font-size: 2.2rem; /* Zmniejszamy czcionkę liczb */
+            }
+            .label {
+                font-size: 0.7rem; /* Zmniejszamy czcionkę etykiet */
+            }
+
+            /* Dostosowanie paniki na małych ekranach */
+             .phase-panic .status-message {
+                font-size: 1.3rem;
+            }
+        }
+        
+
         /* PRZYCISKI TESTOWE (Do usunięcia) */
         .debug-controls {
             position: fixed;
@@ -198,7 +242,14 @@
 </head>
 <body>
 
-   
+    <div class="debug-controls" id="debugPanel">
+        <span class="remove-hint">USUŃ TO PRZED PUBLIKACJĄ!</span>
+        <strong>Panel Testowy (Użyj, żeby zobaczyć faza paniki):</strong>
+        <button onclick="setPhase('relax')">1. Faza: Luzik (>90 dni)</button>
+        <button onclick="setPhase('stress')">2. Faza: Fajrant (<90 dni)</button>
+        <button onclick="setPhase('panic')">3. Faza: JEB*Ć TO (<7 dni)</button>
+        <button onclick="resetAuto()">🔄 Wróć do zegara (Auto)</button>
+    </div>
     <div class="container">
         <h1>Klaudia & Krzysztof</h1>
         
@@ -338,6 +389,4 @@
         updateTimer();
     </script>
 </body>
-
 </html>
-
