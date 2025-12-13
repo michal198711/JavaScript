@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klaudia & Krzysztof - ODLICZANIE DO PIERDOLNIKA ŻYCIA</title>
+    <title>Klaudia & Krzysztof - ODLICZANIE DO NOWEGO LEPSZEGO ŻYCIA</title>
     <style>
         /* RESET I BAZA */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            /* Zmieniona czcionka na coś bardziej 'szalonego' */
+            /* Zachowujemy funkowy styl */
             font-family: 'BlinkMacSystemFont', 'Arial Black', sans-serif;
             display: flex;
             justify-content: center;
@@ -30,7 +30,7 @@
             max-width: 600px;
             width: 100%;
             transition: all 0.5s ease;
-            border: 3px solid #333; /* Podkreślenie kontrastu */
+            border: 3px solid #333;
         }
 
         /* OBRAZEK */
@@ -75,7 +75,7 @@
             flex-wrap: wrap;
         }
         .time-box {
-            background: #ffe082; /* Jasny, wesoły kolor */
+            background: #ffe082;
             padding: 15px;
             border-radius: 12px;
             min-width: 80px;
@@ -87,7 +87,7 @@
         .number {
             font-size: 3rem;
             font-weight: bold;
-            color: #d84315; /* Mocny kolor */
+            color: #d84315;
         }
         .label {
             font-size: 0.9rem;
@@ -99,9 +99,9 @@
 
         /* --- MOTYWY GRAFICZNE DLA HUMORU --- */
 
-        /* FAZA 1: > 90 dni (Spokój frajerów) */
+        /* FAZA 1: > 90 dni (Luzik) */
         body.phase-relax {
-            background: linear-gradient(135deg, #81c784 0%, #a5d6a7 100%); /* Spokój 'na zewnątrz' */
+            background: linear-gradient(135deg, #81c784 0%, #a5d6a7 100%);
         }
         .phase-relax .image-wrapper {
             border-color: #388E3C; 
@@ -110,9 +110,9 @@
         .phase-relax h1 { color: #1b5e20; }
         .phase-relax .number { color: #1b5e20; }
 
-        /* FAZA 2: < 90 dni (Napięcie) */
+        /* FAZA 2: < 90 dni (Wciąż luz, ale trzeba coś kliknąć) */
         body.phase-stress {
-            background: linear-gradient(135deg, #ffb300 0%, #ff8f00 100%); /* Żółte/pomarańczowe: Alarm! */
+            background: linear-gradient(135deg, #ffb300 0%, #ff8f00 100%);
         }
         .phase-stress .image-wrapper {
             border-color: #e65100; 
@@ -122,7 +122,7 @@
         .phase-stress .number { color: #e65100; } 
         .phase-stress .status-message { color: #e65100; }
 
-        /* FAZA 3: < 7 dni (Kurwa mać, Panika) */
+        /* FAZA 3: < 7 dni (Mamy to w dupie, impreza!) */
         body.phase-panic {
             background: repeating-linear-gradient(
                 45deg,
@@ -130,14 +130,14 @@
                 #D50000 30px,
                 #FFFF00 30px,
                 #FFFF00 60px
-            ); /* Ekstremalne barwy */
+            );
             animation: color-flash 0.5s infinite;
         }
         .phase-panic .container {
             border: 10px dashed #000;
             background: #fff;
-            animation: shake 0.2s cubic-bezier(.36,.07,.19,.97) both infinite; /* Szybkie trzęsienie */
-            filter: drop-shadow(0 0 10px #D50000); /* Cień paniki */
+            animation: shake 0.2s cubic-bezier(.36,.07,.19,.97) both infinite;
+            filter: drop-shadow(0 0 10px #D50000);
         }
         .phase-panic h1 {
             color: #D50000;
@@ -149,7 +149,7 @@
             font-weight: 900;
             font-size: 1.8rem;
             color: #000000;
-            text-shadow: 3px 3px 0 #FFEB3B; /* Podwójny cień */
+            text-shadow: 3px 3px 0 #FFEB3B;
         }
         .phase-panic .time-box {
             background: #D50000;
@@ -201,9 +201,9 @@
     <div class="debug-controls" id="debugPanel">
         <span class="remove-hint">USUŃ TO PRZED PUBLIKACJĄ!</span>
         <strong>Panel Testowy (Użyj, żeby zobaczyć faza paniki):</strong>
-        <button onclick="setPhase('relax')">1. Faza: Sielanka (>90 dni)</button>
-        <button onclick="setPhase('stress')">2. Faza: Chaos (<90 dni)</button>
-        <button onclick="setPhase('panic')">3. Faza: KURWA MAĆ (<7 dni)</button>
+        <button onclick="setPhase('relax')">1. Faza: Luzik (>90 dni)</button>
+        <button onclick="setPhase('stress')">2. Faza: Fajrant (<90 dni)</button>
+        <button onclick="setPhase('panic')">3. Faza: JEB*Ć TO (<7 dni)</button>
         <button onclick="resetAuto()">🔄 Wróć do zegara (Auto)</button>
     </div>
     <div class="container">
@@ -213,7 +213,7 @@
             <img id="mainImage" class="funny-image" src="" alt="Status pary młodej">
         </div>
         
-        <p id="statusText" class="status-message">Sprawdzam, czy nie spierdolił się kalendarz...</p>
+        <p id="statusText" class="status-message">Jakiś geniusz uznał, że to tylko 'uroczystość'. Zobaczymy.</p>
 
         <div class="countdown">
             <div class="time-box">
@@ -244,9 +244,9 @@
         // 2. OBRAZKI (Wklej tutaj nazwy swoich plików .jpg/.gif, lub linki)
         // Domyślne linki zastępcze (Placeholders)
         const images = {
-            relax: "https://placehold.co/600x400/81c784/fff?text=Jeszcze+późno%2C+więc+jebać+to%F0%9F%A5%B3",
-            stress: "https://placehold.co/600x400/ffb300/333?text=Gdzie+jest+kurwa+lista+gości%3F+%F0%9F%A4%AF",
-            panic: "https://placehold.co/600x400/000000/FF0000?text=KLAUDIA+i+KRZYSIEK%3A+SP%27RDALAĆ%21%F0%9F%9A%A8"
+            relax: "https://placehold.co/600x400/81c784/fff?text=Naiwna+nadzieja+trwa",
+            stress: "https://placehold.co/600x400/ffb300/333?text=Pierwsze+zasady+ogłoszone!",
+            panic: "https://placehold.co/600x400/000000/FF0000?text=JESTEM+GŁUPI!"
         };
 
         // ====================
@@ -270,16 +270,17 @@
             const now = new Date().getTime();
             const distance = weddingDate - now;
 
-            // Po ślubie (Najgorsze za nimi)
+            // Po ślubie (Chaos uporządkowany)
             if (distance < 0) {
                 els.d.innerText = "0";
                 els.h.innerText = "0";
                 els.m.innerText = "0";
                 els.s.innerText = "0";
-                els.txt.innerText = "Udało się, ch**! Koniec koszmaru, jesteście małżeństwem! CHLEJEMY! 🥂";
+                // Sarkazm: Poślubna, "lepsza" przyszłość
+                els.txt.innerText = "Misja zakończona. Wolność została skodyfikowana i zamieniona na 'wspólne planowanie budżetu'. Gratulacje z okazji **ulepszenia** życia! 🥂";
                 applyPhase('relax');
                 // Zmieniony obrazek po ślubie
-                els.img.src = "https://placehold.co/600x400/1e88e5/fff?text=DEAL+DONE!+Do+grobowej+deski%21%F0%9F%8E%89";
+                els.img.src = "https://placehold.co/600x400/1e88e5/fff?text=KONIEC+WOLNO%C5%8ACI+%28I+JEST+Z+TYM+LEPIEJ%29%21%F0%9F%8E%89";
                 clearInterval(interval);
                 return;
             }
@@ -317,14 +318,14 @@
                els.img.src = images[phase];
             }
 
-            // Ustawienie humorystycznych i luźnych tekstów
+            // Ustawienie sarkastycznych tekstów bez zwracania się i bez imion:
             if (phase === 'relax') {
-                els.txt.innerText = "Siedzimy, pijemy, planujemy. Później i tak będzie rozpierdol, ale na razie jest git. 😎";
+                els.txt.innerText = "'To tylko papier'. Wciąż się wierzy w tę bajkę. Na tym etapie iluzja beztroski jest jeszcze silna. Należy korzystać! 😎";
             } else if (phase === 'stress') {
-                els.txt.innerText = "Dobra, czas zacząć ogarniać ten burdel. Czy na pewno zamówiliśmy tyle wódki? NIECH SIĘ NIE SKOŃCZY! 😬";
+                els.txt.innerText = "Niektórzy zaczynają zauważać, że pojęcie 'wspólna decyzja' oznacza 'zgoda na plan drugiej strony'. Ale to dla *dobra* przyszłości. Prawda? 😭";
             } else if (phase === 'panic') {
-                // Sentencja z ostrym humorem:
-                els.txt.innerText = "KURWA MAĆ! OSTATNIA CHWILA! JESZCZE MOŻESZ UCIEC I NIE SPIERDOLIĆ SOBIE ŻYCIA! DZWOŃ PO TAKSÓWKĘ! 🚨🔥";
+                // Sarkastyczne przyznanie się do błędu, bezosobowe:
+                els.txt.innerText = "JEB*Ć TO! ZROZUMIANO: BYŁ TO BŁĄD, ŻEBY SĄDZIĆ, ŻE *TO* SIĘ NIE ZMIENI! CZAS PRZYJĄĆ WERSJĘ LEPSZEGO ŻYCIA, CZYLI ORGANIZACJĘ! 🤣🍻";
             }
         }
 
