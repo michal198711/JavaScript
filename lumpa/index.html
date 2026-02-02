@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasza Lumpeczka</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #fbc4ab;
+            --dark-pink: #9d4452;
+            --soft-gold: #fdf0d5;
+            --text-color: #5e548e;
+            --bg-color: #fffafb;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--bg-color);
+            font-family: 'Alice', serif;
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 60px;
+            box-shadow: 0 20px 50px rgba(251, 196, 171, 0.3);
+            border: 3px solid var(--primary-pink);
+            z-index: 10;
+            max-width: 550px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.2rem;
+            color: var(--dark-pink);
+            line-height: 1.1;
+        }
+
+        .decoration {
+            font-size: 1.5rem;
+            color: var(--primary-pink);
+            margin-bottom: 0.5rem;
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.7;
+        }
+
+        #counter {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .time-box {
+            background: var(--soft-gold);
+            padding: 15px 10px;
+            border-radius: 20px;
+            min-width: 85px;
+            box-shadow: inset 0 -4px 0 var(--primary-pink);
+        }
+
+        .number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--dark-pink);
+        }
+
+        .label {
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
+        /* Sekcja łącznych godzin */
+        .total-stats {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 2px dashed var(--primary-pink);
+        }
+
+        .total-text {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .total-number {
+            font-size: 2.5rem;
+            color: var(--dark-pink);
+            font-weight: bold;
+            background: linear-gradient(transparent 60%, var(--soft-gold) 60%);
+        }
+
+        .heart {
+            position: absolute;
+            color: var(--primary-pink);
+            pointer-events: none;
+            z-index: 1;
+            animation: float 8s linear infinite;
+            opacity: 0.4;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(110vh) translateX(0) rotate(0deg); }
+            50% { transform: translateX(20px); }
+            100% { transform: translateY(-10vh) translateX(-20px) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="decoration">✨ 🌸 ✨</div>
+        <h1>Nasza Lumpeczka jest z nami już...</h1>
+        <p class="subtitle">Od 8 sierpnia 2025, godzina 09:33</p>
+        
+        <div id="counter">
+            <div class="time-box">
+                <span class="number" id="days">0</span>
+                <span class="label">dni</span>
+            </div>
+            <div class="time-box">
+                <span class="number" id="hours">0</span>
+                <span class="label">godzin</span>
+            </div>
+            <div class="time-box">
+                <span class="number" id="minutes">0</span>
+                <span class="label">minut</span>
+            </div>
+            <div class="time-box">
+                <span class="number" id="seconds">0</span>
+                <span class="label">sekund</span>
+            </div>
+        </div>
+
+        <div class="total-stats">
+            <span class="total-text">To już łącznie:</span>
+            <span class="total-number" id="totalHours">0</span>
+            <span class="total-text">godzin spędzonych razem! ❤️</span>
+        </div>
+    </div>
+
+    <script>
+        const startDate = new Date('2025-08-08T09:33:00').getTime();
+
+        function updateCounter() {
+            const now = new Date().getTime();
+            const diff = now - startDate;
+
+            // Standardowe obliczenia
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            // Obliczenie łącznej liczby godzin (całkowita różnica / ms w godzinie)
+            const totalHours = Math.floor(diff / (1000 * 60 * 60));
+
+            // Aktualizacja widoku
+            document.getElementById('days').innerText = days;
+            document.getElementById('hours').innerText = hours;
+            document.getElementById('minutes').innerText = minutes;
+            document.getElementById('seconds').innerText = seconds;
+            
+            // Formatowanie liczby z separatorem tysięcy (np. 1 234 zamiast 1234)
+            document.getElementById('totalHours').innerText = totalHours.toLocaleString('pl-PL');
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = Math.random() * 20 + 15 + 'px';
+            heart.style.animationDuration = Math.random() * 4 + 5 + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 8000);
+        }
+
+        setInterval(updateCounter, 1000);
+        setInterval(createHeart, 700);
+        updateCounter();
+    </script>
+</body>
+</html>
